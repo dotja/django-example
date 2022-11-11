@@ -1,0 +1,20 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container home_msg">
+    {% if user.is_authenticated %}
+      <h2>Hi {{ user }}!</h2>
+    {% else %}
+      <h2>Hmm, who are you?</h2><a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
+
+    {% endif %}
+  </div>
+
+</body>
+
+{% endblock %} 

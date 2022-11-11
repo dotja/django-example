@@ -1,0 +1,50 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+    <div class="row error_msg">
+      <div class="col">{{ message }}</div>
+    </div>
+    {% endif %}
+    {% if message.tags == 'info' %}
+    <div class="row">
+      <div class="col info_msg">{{ message }}</div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="container wrapper d-flex justify-content-center">
+    <div class="p-4">
+    <form method="post">{% csrf_token %}
+    <h2>Sign Up</h2>
+    <p>Create a new account.</p>
+    <div class="form-group">
+       <input type="username" class="form-control" name="username" placeholder="Username" minlength="2" maxlength="20" required>
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" name="user_email" placeholder="Email" maxlength="30" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="user_pass" placeholder="Password" minlength="8" maxlength="20" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+    </div>
+    <div class="text-center">Already have an account? <a href="{% url 'login' %}">Log in</a></div>
+    </form>
+    </div>
+  </div>
+
+</body>
+
+{% endblock %}

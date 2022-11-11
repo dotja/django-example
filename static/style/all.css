@@ -1,0 +1,16 @@
+html body {
+	background-color: #f1e3a6;
+}
+
+.home_msg {
+	margin-top: 10%;
+}
+
+.error_msg {
+	background: #FF726F;
+}
+
+
+.info_msg {
+	background: #00FF7F;
+}
