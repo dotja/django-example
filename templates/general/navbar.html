@@ -18,7 +18,14 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
       {% if user.is_authenticated %}
-      <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a type="button" class="btn btn-success" href="{% url 'product_page' %}" data-bind-href="pricing">Checkout page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+        </li>
+      </ul>
       {% else %}
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">

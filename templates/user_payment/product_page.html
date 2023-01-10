@@ -1,0 +1,23 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container home_msg">
+    {% if user.is_authenticated %}
+      <form enctype="multipart/form-data" method="post" role="product_page">
+      {% csrf_token %}
+        <h2>Hi {{ user }}! To pay, click on this button <button type="submit" class="btn btn-success" href="{% url 'product_page' %}" data-bind-href="pricing">Payment</button></h2>
+      </form>
+    {% else %}
+      <h2>You're not logged in...</h2><a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
+
+    {% endif %}
+  </div>
+
+</body>
+
+{% endblock %} 
