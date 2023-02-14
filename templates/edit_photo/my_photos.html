@@ -1,0 +1,27 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+
+  <div class="container wrapper d-flex justify-content-center">
+    <div class="p-4">
+      <div style="text-align:center;">
+      <h2>Sketched images</h2>
+      <h1>&#8595;&#8595;&#8595;&#8595;</h1>
+      </div>
+      {% for i in photos %}
+      <div>
+        <label>{{ i.photo }}</label>
+        <a type="button" href="{% url 'download' id=i.id %}" target="_blank">Download</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</body>
+
+{% endblock %}

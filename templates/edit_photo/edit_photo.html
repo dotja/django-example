@@ -1,0 +1,39 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'info' %}
+    <div class="row info_msg">
+      <div class="col">{{ message }}</div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="container wrapper d-flex justify-content-center">
+    <div class="p-4">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <h2>Upload and convert</h2>
+    <p>Choose an image.</p>
+    <div class="form-group">
+      <input type="file" name="photo" accept=".jpg, .jpeg">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Convert to sketch</button>
+    </div>
+    </form>
+    </div>
+
+  </div>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+boto3==1.26.50
+celery==5.2.7
+Django==4.1.4
+django-storages==1.13.2
+opencv-contrib-python==4.7.0.68
+Pillow==9.4.0
+stripe==5.0.0
+sketchify==0.0.8
