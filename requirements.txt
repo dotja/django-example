@@ -6,3 +6,4 @@ opencv-contrib-python==4.7.0.68
 Pillow==9.4.0
 stripe==5.0.0
 sketchify==0.0.8
+pymongo==4.3.3

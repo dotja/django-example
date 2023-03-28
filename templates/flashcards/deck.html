@@ -1,0 +1,67 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'info' %}
+    <div class="row info_msg">
+      <div class="col">{{ message }}</div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="container wrapper d-flex justify-content-center" style="margin-top:5%;">
+    <div class="p-4">
+
+      <h2 style="background-color:#fffee6;">Decks:</h2>
+      <hr>
+
+    {% if decks %}
+    {% for key, value in decks.items %}
+
+    <p>
+      <form action="{% url 'deck' deck_name=key %}" method="post">{% csrf_token %}
+      <div>
+      <span style="font-size:22px;padding-right:20px;"><strong>{{ key }} ({{ value }} cards)</strong></span>
+        <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'card' deck_name=key %}">Review</a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" type="submit">Delete</button>
+        </div>
+      </div>
+      </form>
+      <hr>
+    </p>
+
+    {% endfor %}
+    {% else %}
+    <p>
+      You have no decks yet.
+    </p>
+    {% endif %}
+
+    <div style="margin-top:40%;">
+    <h2 style="background-color:#fffee6;">Upload a new deck:</h2>
+    <hr>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <input type="file" name="csv_file" accept=".csv">
+    <button type="submit" class="btn btn-success">Add Deck</button>
+    </form>
+    </div>
+
+    </div>
+  </div>
+
+</body>
+
+{% endblock %}

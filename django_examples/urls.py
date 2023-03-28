@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('app_users.urls')),
     path('', include('user_payment.urls')),
     path('', include('edit_photo.urls')),
+    path('', include('flashcards.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

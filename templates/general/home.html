@@ -10,7 +10,7 @@
     {% if user.is_authenticated %}
       <h2>Hi {{ user }}!</h2>
     {% else %}
-      <h2>Hmm, who are you?</h2><a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
+      <h2>Hmm, who are you?</h2><a href="{% url 'login' %}" class="btn btn-secondary">Log in</a> OR <a href="{% url 'deck' %}" class="btn btn-info">Go to decks</a>
 
     {% endif %}
   </div>

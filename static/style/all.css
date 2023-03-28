@@ -18,3 +18,34 @@ html body {
 a {
 	color: #6c757d;
 }
+
+
+/* card */
+.card {
+    border: none;
+    border-radius: 10px
+}
+
+#reviewed {
+    color: #a5aec0
+}
+
+p {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+.center-align {
+	text-align: center;
+}
+
+#meaning_hidden {
+	display: block;
+}
+
+#meaning {
+	background-color: #FFFF00;
+}

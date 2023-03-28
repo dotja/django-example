@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'app_users.apps.AppUsersConfig',
     'user_payment.apps.UserPaymentConfig',
     'edit_photo.apps.EditPhotoConfig',
+    'flashcards.apps.FlashcardsConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +89,17 @@ DATABASES = {
 
 ## User model
 AUTH_USER_MODEL = 'app_users.AppUser'
+
+
+# MongoDB
+# flashcard app
+
+# MONGO DB
+MONGO_USER = os.getenv('MONGO_USER')
+MONGO_PASSWORD = os.getenv('MONGO_PASSWORD')
+MONGO_HOST = os.getenv('MONGO_HOST')
+MONGO_DB = os.getenv('MONGO_DB')
+MONGO_COLLECTION = os.getenv('MONGO_COLLECTION')
 
 
 # Password validation
